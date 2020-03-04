@@ -1,7 +1,7 @@
 import React from "react";
 import {Comment, Placeholder} from 'semantic-ui-react';
-import {NewsItem} from "../models/newsItem";
-import {RestApis} from "../restApis";
+import {NewsItem} from "../../models/newsItem";
+import {RestApis} from "../../restApis";
 import Moment from "react-moment";
 
 

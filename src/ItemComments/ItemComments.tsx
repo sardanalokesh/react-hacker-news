@@ -1,6 +1,6 @@
 import React from "react";
 import {Comment, Header} from "semantic-ui-react";
-import {ItemComment} from "./ItemComment";
+import {ItemComment} from "./ItemComment/ItemComment";
 
 interface Props {
     itemIds: number[];

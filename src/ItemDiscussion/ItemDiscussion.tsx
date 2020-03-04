@@ -8,7 +8,7 @@ import {ItemComments} from "../ItemComments/ItemComments";
 import {Segment} from "semantic-ui-react";
 
 interface Props {
-    match: match
+    match?: match
 }
 
 interface State {
@@ -30,7 +30,7 @@ export class ItemDiscussion extends React.Component<Props, State> {
     }
 
     componentDidMount(): void {
-        const itemId = this.props.match.params["itemId"];
+        const itemId = this.props.match ? this.props.match.params["itemId"] : null;
         fetch(RestApis.item(itemId))
             .then(res => res.json())
             .then((item: NewsItem) => {
