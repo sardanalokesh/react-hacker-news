@@ -1,26 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import {AppHeader} from "./Header/Header";
+import {AppContext} from "./appContext";
+import {Container} from "semantic-ui-react";
+import {Feed} from "./Feed/Feed";
+import {Router} from "react-router";
+import {AppRouter} from "./AppRouter";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+interface Props {
 }
 
-export default App;
+interface State {
+}
+
+
+export default class App extends React.Component<Props, State> {
+
+    private appContext: any = {
+      themeColor: "blue"
+    };
+
+    render() {
+        return (
+            <div className="App">
+                <AppContext.Provider value={this.appContext}>
+                    <AppHeader />
+                    <Container>
+                        <AppRouter />
+                    </Container>
+                </AppContext.Provider>
+            </div>
+        );
+    }
+}
